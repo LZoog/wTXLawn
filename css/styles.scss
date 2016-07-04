@@ -4,6 +4,9 @@ $med: 768px;
 $off-white: #e0e0e0;
 $grey-light: #cacaca;
 $grey-dark: #2c2c2c;
+$green-dark: #1a2906;
+$green: #3b6720;
+$green-light: #cee3bc;
 
 
 html, body, #wrapper {
@@ -13,9 +16,53 @@ html, body, #wrapper {
   padding: 0;
 }
 
-#top {
+header {
   text-align: center;
-  background: url(../img/fence-dark.jpg);
+  background-image:url(../img/bg-green.jpg);
+  padding: 25px 0 30px;
+  border-bottom: 1px solid $green;
+
+  img {
+    width: 90px;
+    height: auto;
+  }
+
+  h1 {
+    font-family: 'Philosopher', serif;
+    color: $off-white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px black;
+    margin: 8px 0 0;
+    font-size: 2.2em;
+  }
+
+  h2 {
+    color: $green-light;
+    font-family: 'Open Sans', serif;
+    font-size: 1.1em;
+    margin: 0;
+  }
+
+  #phone {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    color: $green-light;
+    font-family: 'Open Sans', serif;
+
+    img {
+      position: relative;
+      top: 15px;
+      width: 40px;
+      height: auto;
+    }
+  }
+}
+
+#fence {
+  text-align: center;
+  background: url(../img/fence.jpg);
   background-size: cover;
   padding: 50px 0;
 
@@ -24,6 +71,8 @@ html, body, #wrapper {
     color: $grey-light;
     font-size: 2em;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 1px black;
+    font-family: 'Open Sans', serif;
 
     &:nth-of-type(2) {
       margin-top: 15px;
@@ -33,10 +82,49 @@ html, body, #wrapper {
   }
 
   img {
-    width: 90%;
+    width: 98%;
     max-width: 1526px;
     @media (min-width: $med) {
       width: 70%;
     }
+  }
+}
+
+#why {
+  background-image:url(../img/why.jpeg);
+  //background-size: cover;
+  background-position: center bottom;
+  box-sizing: border-box;
+
+  h1 {
+    font-family: 'Open Sans', serif;
+    text-transform: uppercase;
+  }
+
+  .boxes {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 95%;
+    display: table;
+    border-spacing: 35px;
+  }
+
+  .box {
+    width: 100%;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+    padding: 0px 25px 15px;
+    color: $off-white;
+    background-image: url(../img/bg-blck.png);
+
+    @media (min-width: $med) {
+      width: 33.33%;
+      display: table-cell;
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    clear: both;
   }
 }
