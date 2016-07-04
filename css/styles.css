@@ -4,6 +4,12 @@ html, body, #wrapper {
   margin: 0;
   padding: 0; }
 
+h1 {
+  font-family: 'Philosopher', serif; }
+
+h2, p {
+  font-family: 'Open Sans', serif; }
+
 header {
   text-align: center;
   background-image: url(../img/bg-green.jpg);
@@ -13,7 +19,6 @@ header {
     width: 90px;
     height: auto; }
   header h1 {
-    font-family: 'Philosopher', serif;
     color: #e0e0e0;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -22,36 +27,52 @@ header {
     font-size: 2.2em; }
   header h2 {
     color: #cee3bc;
-    font-family: 'Open Sans', serif;
     font-size: 1.1em;
     margin: 0; }
-  header #phone {
+  header .phone {
     position: absolute;
     right: 10px;
     top: -5px;
     color: #cee3bc;
     font-family: 'Open Sans', serif; }
-    header #phone img {
+    header .phone img {
       position: relative;
       top: 15px;
       width: 40px;
       height: auto; }
 
+nav {
+  background-image: url(../img/bg-green.jpg);
+  padding: 10px;
+  border-bottom: 1px solid #3b6720; }
+  nav ul {
+    text-align: center;
+    padding: 0;
+    margin: 5px; }
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px; }
+      nav ul li a {
+        text-decoration: none; }
+
+section {
+  padding: 50px 10px; }
+
 #fence {
   text-align: center;
   background: url(../img/fence.jpg);
-  background-size: cover;
-  padding: 50px 0; }
-  #fence h1 {
+  background-size: cover; }
+  #fence h2 {
     text-transform: uppercase;
     color: #cacaca;
-    font-size: 2em;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 1px black;
-    font-family: 'Open Sans', serif; }
-    #fence h1:nth-of-type(2) {
+    text-shadow: 1px 1px 1px black; }
+    #fence h2:first-of-type {
+      margin-bottom: 25px;
+      font-size: 3em;
+      letter-spacing: 2px; }
+    #fence h2:nth-of-type(2) {
       margin-top: 15px;
-      font-size: 4em;
+      font-size: 5em;
       letter-spacing: 4px; }
   #fence img {
     width: 98%;
@@ -60,20 +81,59 @@ header {
       #fence img {
         width: 70%; } }
 
+#about {
+  text-align: center;
+  margin-bottom: 45px; }
+  #about-wrapper {
+    max-width: 800px;
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      #about-wrapper span {
+        white-space: nowrap; } }
+  #about h1 {
+    font-size: 3.2em; }
+  #about hr {
+    width: 80px;
+    border-width: 3px;
+    border-color: #cee3bc;
+    margin: 30px auto 50px; }
+  #about p {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    margin: 0 auto; }
+  #about a {
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background-color: #3b6720;
+    border: 5px solid #cee3bc;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #e0e0e0;
+    text-transform: uppercase; }
+    #about a:hover {
+      background-color: #2b4c18; }
+
 #why {
   background-image: url(../img/why.jpeg);
   background-position: center bottom;
   box-sizing: border-box; }
   #why h1 {
-    font-family: 'Open Sans', serif;
     text-transform: uppercase; }
-  #why .boxes {
+  #why h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 4px #cee3bc; }
+  #why #benefit-wrapper {
     margin: 0 auto;
     max-width: 1300px;
     width: 95%;
     display: table;
     border-spacing: 35px; }
-  #why .box {
+  #why .benefit {
     width: 100%;
     margin-bottom: 35px;
     box-sizing: border-box;
@@ -81,11 +141,58 @@ header {
     color: #e0e0e0;
     background-image: url(../img/bg-blck.png); }
     @media (min-width: 768px) {
-      #why .box {
+      #why .benefit {
         width: 33.33%;
         display: table-cell;
         margin-bottom: 0; } }
   #why p {
     clear: both; }
+
+#grasses h1 {
+  text-align: center; }
+#grasses #mulch-wrapper {
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 95%; }
+  #grasses #mulch-wrapper .mulch {
+    margin-bottom: 35px; }
+
+#contact {
+  text-align: center;
+  background: white;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, #6ca7cd);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, #6ca7cd);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, #6ca7cd);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #6ca7cd);
+  /* Standard syntax */ }
+  #contact #contact-bg {
+    background-image: url(../img/grass.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding-bottom: 100px; }
+  #contact .phone {
+    margin: 25px;
+    color: #1a2906; }
+    #contact .phone h1 {
+      font-size: 2em; }
+    #contact .phone p {
+      line-height: .2em;
+      font-size: 2.3em; }
+      #contact .phone p:nth-of-type(2) {
+        font-size: 1.7em; }
+    #contact .phone div {
+      display: inline-block; }
+      #contact .phone div.numbers {
+        position: relative;
+        top: -15px;
+        margin-left: 10px; }
+    #contact .phone img {
+      width: 100px;
+      height: auto; }
 
 /*# sourceMappingURL=styles.css.map */

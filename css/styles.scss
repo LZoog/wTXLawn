@@ -8,12 +8,21 @@ $green-dark: #1a2906;
 $green: #3b6720;
 $green-light: #cee3bc;
 
+$skyblue: #6ca7cd;
 
 html, body, #wrapper {
   height: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: 'Philosopher', serif;
+}
+
+h2, p {
+  font-family: 'Open Sans', serif;
 }
 
 header {
@@ -28,7 +37,6 @@ header {
   }
 
   h1 {
-    font-family: 'Philosopher', serif;
     color: $off-white;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -39,12 +47,12 @@ header {
 
   h2 {
     color: $green-light;
-    font-family: 'Open Sans', serif;
+    //font-family: 'Open Sans', serif;
     font-size: 1.1em;
     margin: 0;
   }
 
-  #phone {
+  .phone {
     position: absolute;
     right: 10px;
     top: -5px;
@@ -60,23 +68,49 @@ header {
   }
 }
 
+nav {
+  background-image:url(../img/bg-green.jpg);
+  padding: 10px;
+  border-bottom: 1px solid $green;
+
+  ul {
+    text-align: center;
+    padding: 0;
+    margin: 5px;
+
+    li {
+      display: inline-block;
+      margin: 0 20px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+section {
+  padding: 50px 10px;
+}
+
 #fence {
   text-align: center;
   background: url(../img/fence.jpg);
   background-size: cover;
-  padding: 50px 0;
 
-  h1 {
+  h2 {
     text-transform: uppercase;
     color: $grey-light;
-    font-size: 2em;
-    letter-spacing: 2px;
     text-shadow: 1px 1px 1px black;
-    font-family: 'Open Sans', serif;
+
+    &:first-of-type {
+      margin-bottom: 25px;
+      font-size: 3em;
+      letter-spacing: 2px;
+    }
 
     &:nth-of-type(2) {
       margin-top: 15px;
-      font-size: 4em;
+      font-size: 5em;
       letter-spacing: 4px;
     }
   }
@@ -90,6 +124,55 @@ header {
   }
 }
 
+#about {
+  text-align: center;
+  margin-bottom: 45px;
+
+  &-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (min-width: $med) {
+      span {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 3.2em;
+  }
+
+  hr {
+    width: 80px;
+    border-width: 3px;
+    border-color: $green-light;
+    margin: 30px auto 50px;
+  }
+
+  p {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    margin: 0 auto;
+  }
+
+  a {
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background-color: $green;
+    border: 5px solid $green-light;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: $off-white;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color:darken($green, 7%);
+    }
+  }
+}
+
 #why {
   background-image:url(../img/why.jpeg);
   //background-size: cover;
@@ -97,11 +180,20 @@ header {
   box-sizing: border-box;
 
   h1 {
-    font-family: 'Open Sans', serif;
     text-transform: uppercase;
   }
 
-  .boxes {
+  h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 4px $green-light;
+
+  }
+
+  #benefit-wrapper {
     margin: 0 auto;
     max-width: 1300px;
     width: 95%;
@@ -109,7 +201,7 @@ header {
     border-spacing: 35px;
   }
 
-  .box {
+  .benefit {
     width: 100%;
     margin-bottom: 35px;
     box-sizing: border-box;
@@ -126,5 +218,82 @@ header {
 
   p {
     clear: both;
+  }
+}
+
+#grasses {
+  h1 {
+    text-align: center;
+  }
+
+  #mulch-wrapper {
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 95%;
+
+    .mulch {
+      margin-bottom: 35px;
+
+      @media (min-width: $med) {
+      }
+    }
+  }
+}
+
+#contact {
+  text-align: center;
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, $skyblue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, $skyblue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, $skyblue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, $skyblue); /* Standard syntax */
+
+  #contact-bg {
+    background-image: url(../img/grass.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding-bottom: 100px;
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  .phone {
+    margin: 25px;
+    color: $green-dark;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      line-height: .2em;
+      font-size: 2.3em;
+
+      &:nth-of-type(2) {
+        font-size: 1.7em;
+      }
+    }
+
+    div {
+      display: inline-block;
+
+      &.numbers {
+        position: relative;
+        top: -15px;
+        margin-left: 10px;
+      }
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+    }
   }
 }
