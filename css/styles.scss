@@ -7,8 +7,7 @@ $grey-dark: #2c2c2c;
 $green-dark: #1a2906;
 $green: #3b6720;
 $green-light: #cee3bc;
-
-$skyblue: #6ca7cd;
+$green-lighter: #e0f2cf;
 
 html, body, #wrapper {
   height: 100%;
@@ -19,9 +18,10 @@ html, body, #wrapper {
 
 h1 {
   font-family: 'Philosopher', serif;
+  color: $green-dark;
 }
 
-h2, p {
+h2, p, li {
   font-family: 'Open Sans', serif;
 }
 
@@ -131,12 +131,6 @@ section {
   &-wrapper {
     max-width: 800px;
     margin: 0 auto;
-
-    @media (min-width: $med) {
-      span {
-        white-space: nowrap;
-      }
-    }
   }
 
   h1 {
@@ -176,11 +170,17 @@ section {
 #why {
   background-image:url(../img/why.jpeg);
   //background-size: cover;
-  background-position: center bottom;
+  //background-position: center bottom;
   box-sizing: border-box;
+
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 
   h1 {
     text-transform: uppercase;
+    color: white;
   }
 
   h2 {
@@ -189,8 +189,7 @@ section {
     margin: 0;
     text-align: center;
     letter-spacing: 2px;
-    text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 4px $green-light;
-
+    text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 3px $green-light, 1px 1px 3px $green-light;
   }
 
   #benefit-wrapper {
@@ -202,6 +201,7 @@ section {
   }
 
   .benefit {
+    text-align: center;
     width: 100%;
     margin-bottom: 35px;
     box-sizing: border-box;
@@ -214,63 +214,125 @@ section {
       display: table-cell;
       margin-bottom: 0;
     }
+
+    hr {
+      width: 80px;
+      border-width: 2px;
+      border-color: $green;
+      margin-top: -5px;
+    }
   }
 
   p {
-    clear: both;
+    font-size: 1.1em;
+    line-height: 1.25em;
   }
 }
 
 #grasses {
-  h1 {
+  background-image:url(../img/bg-ltgreen.jpg);
+  background-size: cover;
+
+  h2 {
     text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 1px $green-dark, 1px 1px 1px $green-dark, 1px 1px 2px $green-dark;
   }
 
-  #mulch-wrapper {
+  #seed-wrapper {
     margin: 0 auto;
     max-width: 1300px;
     width: 95%;
 
-    .mulch {
+    .seed {
+      padding: 20px 40px;
       margin-bottom: 35px;
+      background-image:url(../img/bg-white.png);
+      overflow: hidden;
+      box-sizing: border-box;
 
-      @media (min-width: $med) {
+      &-img {
+        width: 360px;
+        height: auto;
+      }
+
+      &:nth-of-type(odd) .seed-img {
+        float: left;
+        margin-right: 30px;
+      }
+
+      &:nth-of-type(even) .seed-img {
+        float: right;
+        margin-left: 30px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      ul {
+        list-style-type: none;
+        display: table;
+        border-collapse: separate;
+        //border-spacing: 50px 0;
+        margin-top: 40px;
+        padding: 0;
+
+        li {
+          text-align: center;
+          font-size: 1em;
+          width: 33.33%;
+          display: table-cell;
+          padding: 20px;
+
+          &:not(:last-of-type) {
+            border-right: 2px solid $green-light;
+          }
+
+          img {
+            width: 70px;
+            height: auto;
+            padding: 5px;
+          }
+        }
       }
     }
+  }
+
+  hr {
+    width: 80%;
+    border-color: $green-lighter;
+    border-width: 1px;
+    margin: 0px auto 20px;
   }
 }
 
 #contact {
+  padding-bottom: 100px;
   text-align: center;
-  background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(white, $skyblue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, $skyblue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, $skyblue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, $skyblue); /* Standard syntax */
+  background-image: url(../img/grass.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 
-  #contact-bg {
-    background-image: url(../img/grass.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    padding-bottom: 100px;
-  }
-
-  h1 {
-
+  h1:nth-of-type(2) {
+    margin: 70px 0 0;
   }
 
   h2 {
-
+    line-height: .5em;
   }
 
   .phone {
-    margin: 25px;
     color: $green-dark;
-
-    h1 {
-      font-size: 2em;
-    }
 
     p {
       line-height: .2em;
@@ -295,5 +357,11 @@ section {
       width: 100px;
       height: auto;
     }
+  }
+}
+
+@media (min-width: $med) {
+  .nowrap {
+    white-space: nowrap;
   }
 }
