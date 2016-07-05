@@ -1,29 +1,37 @@
 
 $(function(){
 
+  /* STICKY NAV */
   var headHeight = $('#top').height() + $('nav').height() + 28;
-  $('nav').toggleClass('sticky', $(this).scrollTop() >= headHeight);
+
+  function sticky() {
+    if ($(window).scrollTop() >= headHeight) {
+      $('nav').addClass('sticky');
+      $('#fence').css('margin-top', $('nav').height()+21+'px');
+    } else {
+      $('nav').removeClass('sticky');
+      $('#fence').css('margin-top', '0px');
+    }
+  }
+  sticky();
 
   $(window).scroll(function(){
-    $('nav').toggleClass('sticky', $(this).scrollTop() >= headHeight);
+    sticky();
   });
 
-//   $('#nav').onePageNav({
-//     currentClass: 'current',
-//     changeHash: true,
-//     scrollSpeed: 750,
-//     scrollThreshold: 0.5,
-//     filter: '',
-//     easing: 'swing',
-//     begin: function() {
-//         //I get fired when the animation is starting
-//     },
-//     end: function() {
-//         //I get fired when the animation is ending
-//     },
-//     scrollChange: function($currentListItem) {
-//         //I get fired when you enter a section and I pass the list item of the section
-//     }
-// });
-
+  /* SMOOTH SCROLLING */
+  $(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
 });

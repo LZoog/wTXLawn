@@ -46,6 +46,20 @@ nav {
   background-image: url(../img/bg-green.jpg);
   padding: 10px;
   border-bottom: 1px solid #3b6720; }
+  nav img {
+    width: 40px;
+    margin-right: 10px;
+    height: auto;
+    display: none; }
+  nav h1 {
+    color: #cee3bc;
+    text-shadow: 1px 1px 1px #1a2906;
+    position: relative;
+    top: 5px;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+    display: none; }
   nav ul {
     text-align: center;
     padding: 0;
@@ -60,6 +74,14 @@ nav {
   position: fixed;
   top: 0;
   width: 100%; }
+  .sticky ul {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center; }
+  .sticky img {
+    display: inline-block; }
+  .sticky h1 {
+    display: inline; }
 
 section {
   padding: 50px 10px; }
