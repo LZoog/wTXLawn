@@ -2,12 +2,12 @@
 $(function(){
 
   /* STICKY NAV */
-  var headHeight = $('#top').height() + $('nav').height() + 28;
+  var headHeight = $('#top').outerHeight(true);
 
   function sticky() {
     if ($(window).scrollTop() >= headHeight) {
       $('nav').addClass('sticky');
-      $('#fence').css('margin-top', $('nav').height()+21+'px');
+      $('#fence').css('margin-top', $('nav').outerHeight(true)+'px');
     } else {
       $('nav').removeClass('sticky');
       $('#fence').css('margin-top', '0px');
@@ -18,6 +18,30 @@ $(function(){
   $(window).scroll(function(){
     sticky();
   });
+
+  /* ACTIVE STATE NAV */
+  var anchors = $('#top, #about, #grasses, #contact');
+  //var currentScroll = 
+
+  // navHeight = $('nav')
+  // , nav_height = nav.outerHeight();
+  //
+  // $(window).on('scroll', function () {
+  //   var cur_pos = $(this).scrollTop();
+  //
+  //   sections.each(function() {
+  //     var top = $(this).offset().top - nav_height,
+  //         bottom = top + $(this).outerHeight();
+  //
+  //     if (cur_pos >= top && cur_pos <= bottom) {
+  //       nav.find('a').removeClass('active');
+  //       sections.removeClass('active');
+  //
+  //       $(this).addClass('active');
+  //       nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+  //     }
+  //   });
+  // });
 
   /* SMOOTH SCROLLING */
   $(function() {
@@ -34,4 +58,5 @@ $(function(){
       }
     });
   });
+
 });
