@@ -56,6 +56,11 @@ nav {
       nav ul li a {
         text-decoration: none; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
 section {
   padding: 50px 10px; }
 
