@@ -3,11 +3,11 @@ $(function(){
 
   /* STICKY NAV */
   var headHeight = $('#top').outerHeight(true);
-
+  var navHeight = $('nav').outerHeight(true);
   function sticky() {
     if ($(window).scrollTop() >= headHeight) {
       $('nav').addClass('sticky');
-      $('#fence').css('margin-top', $('nav').outerHeight(true)+'px');
+      $('#fence').css('margin-top', navHeight+'px');
     } else {
       $('nav').removeClass('sticky');
       $('#fence').css('margin-top', '0px');
@@ -15,13 +15,32 @@ $(function(){
   }
   sticky();
 
+  /* ACTIVE STATE NAV */
+  var anchors = $('#top, #about, #grasses, #contact');
+  function active() {
+    var top;
+    anchors.each(function(){
+      if (anchors[3]) {
+        top = $(this).offset().top - 450;
+      } else {
+        top = $(this).offset().top;
+      }
+
+      if ($(window).scrollTop() >= top) {
+        $('nav').find('a').removeClass('active');
+        $('nav').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      }
+    });
+  }
+
   $(window).scroll(function(){
     sticky();
+    active();
   });
 
   /* ACTIVE STATE NAV */
-  var anchors = $('#top, #about, #grasses, #contact');
-  //var currentScroll = 
+  //on scroll
+  //var currentScroll = $(this).scrollTop();
 
   // navHeight = $('nav')
   // , nav_height = nav.outerHeight();
