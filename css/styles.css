@@ -67,11 +67,14 @@ nav {
     margin: 5px; }
     nav ul li {
       display: inline-block;
-      margin: 0 20px; }
+      margin: 0 15px; }
       nav ul li a {
+        color: #cee3bc;
+        padding: 6px 10px;
         text-decoration: none; }
         nav ul li a.active {
-          background-color: #3b6720; }
+          background-color: #3b6720;
+          border-radius: 20px; }
 
 .sticky {
   position: fixed;

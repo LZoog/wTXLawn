@@ -99,12 +99,16 @@ nav {
 
     li {
       display: inline-block;
-      margin: 0 20px;
+      margin: 0 15px;
+
       a {
+        color: $green-light;
+        padding: 6px 10px;
         text-decoration: none;
 
         &.active {
           background-color: $green;
+          border-radius: 20px;
         }
       }
     }
