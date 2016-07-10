@@ -7,36 +7,58 @@ $(function(){
   function sticky() {
     if ($(window).scrollTop() >= headHeight) {
       $('nav').addClass('sticky');
+      $('#logo').addClass('fade-in');
       $('#fence').css('margin-top', navHeight+'px');
     } else {
       $('nav').removeClass('sticky');
+      $('#logo').removeClass('fade-in');
       $('#fence').css('margin-top', '0px');
     }
   }
   sticky();
 
-  /* ACTIVE STATE NAV */
+  /* ACTIVE STATE NAV && ANIMATIONS */
+  $('.benefit').each(function(){$(this).css('opacity', '0');});
   var anchors = $('#top, #about, #grasses, #contact');
-  function active() {
-    var top;
-    anchors.each(function(){
-      if (anchors[3]) {
-        // #contact anchor
-        top = $(this).offset().top - 450;
-      } else {
-        top = $(this).offset().top;
-      }
+  var topBenefits = $('#why').offset().top + 200;
+  var bottomBenefits = topBenefits - $('#why').outerHeight(true) - 300;
 
-      if ($(window).scrollTop() >= top) {
-        $('nav').find('a').removeClass('active');
-        $('nav').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
-      }
-    });
+  var top;
+  anchors.each(function(){
+    if (anchors[3]) {
+      // #contact anchor
+      top = $(this).offset().top - 300;
+    } else {
+      top = $(this).offset().top;
+    }
+  });
+
+  function activeAndAnimations() {
+
+    // benefits animation
+    if ((topBenefits >= $(window).scrollTop() && $(window).scrollTop() >= bottomBenefits) && !$('.benefit').hasClass('fade-in')) {
+      console.log('inside');
+      $('.benefit').each(function(i) {
+        if (i === 0) {
+          $(this).addClass('fade-in one');
+        } else if (i === 1) {
+          $(this).addClass('fade-in two');
+        } else {
+          $(this).addClass('fade-in three');
+        }
+      });
+    }
+
+    // sticky nav
+    if ($(window).scrollTop() >= top) {
+      $('nav').find('a').removeClass('active');
+      $('nav').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    }
   }
 
   $(window).scroll(function(){
     sticky();
-    active();
+    activeAndAnimations();
   });
 
   /* SMOOTH SCROLLING */

@@ -55,13 +55,25 @@ header {
   .phone {
     position: absolute;
     right: 10px;
-    top: -5px;
+    top: 5px;
     color: $green-light;
-    font-family: 'Open Sans', serif;
+
+    p {
+      line-height: .2em;
+      font-size: 1em;
+
+      &:nth-of-type(2) {
+        font-size: .75em;
+      }
+    }
+
+    div {
+      display: inline-block;
+    }
 
     img {
       position: relative;
-      top: 15px;
+      top: 5px;
       width: 40px;
       height: auto;
     }
@@ -69,10 +81,15 @@ header {
 }
 
 nav {
+  box-sizing: border-box;
   width: 100%;
   background-image:url(../img/bg-green.jpg);
   padding: 10px;
   border-bottom: 1px solid $green;
+
+  a {
+    text-decoration: none;
+  }
 
   img {
     width: 45px;
@@ -99,12 +116,19 @@ nav {
 
     li {
       display: inline-block;
-      margin: 0 15px;
+      margin: 0 2px;
+
+      @media (min-width: $med) {
+        margin: 0 15px;
+      }
 
       a {
         color: $green-light;
         padding: 6px 10px;
-        text-decoration: none;
+
+        &:hover:not(.active) {
+          color: darken($green-light, 25%);
+        }
 
         &.active {
           background-color: $green;
@@ -123,12 +147,23 @@ nav {
     position: absolute;
     top: 7px;
     left: 15px;
-  }
 
-  img, h1 {
-    display: inline-block;
-  }
+    h1 {
+      display: none;
 
+      @media (min-width: $med) {
+        display: inline-block;
+
+        &:hover {
+          color: darken($green-light, 15%);
+        }
+      }
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
 }
 
 section {
@@ -147,14 +182,20 @@ section {
 
     &:first-of-type {
       margin-bottom: 25px;
-      font-size: 3em;
+      font-size: 2.5em;
       letter-spacing: 2px;
+      @media (min-width: $med) {
+        font-size: 3em;
+      }
     }
 
     &:nth-of-type(2) {
       margin-top: 15px;
-      font-size: 5em;
+      font-size: 3.5em;
       letter-spacing: 4px;
+      @media (min-width: $med) {
+        font-size: 5em;
+      }
     }
   }
 
@@ -212,10 +253,7 @@ section {
 
 #why {
   background-image:url(../img/why.jpeg);
-  //background-size: cover;
-  //background-position: center bottom;
   box-sizing: border-box;
-
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -240,6 +278,7 @@ section {
     max-width: 1300px;
     width: 95%;
     display: table;
+    table-layout: fixed;
     border-spacing: 35px;
   }
 
@@ -248,7 +287,7 @@ section {
     width: 100%;
     margin-bottom: 35px;
     box-sizing: border-box;
-    padding: 0px 25px 15px;
+    padding: 10px;
     color: $off-white;
     background-image: url(../img/bg-blck.png);
 
@@ -256,6 +295,7 @@ section {
       width: 33.33%;
       display: table-cell;
       margin-bottom: 0;
+      padding: 0px 25px 15px;
     }
 
     hr {
@@ -273,8 +313,7 @@ section {
 }
 
 #grasses {
-  background-image:url(../img/bg-ltgreen.jpg);
-  background-size: cover;
+  background-image: url(../img/bg-ltgreen.jpg);
 
   h2 {
     text-align: center;
@@ -291,25 +330,37 @@ section {
     width: 95%;
 
     .seed {
-      padding: 20px 40px;
+      padding: 20px 10px;
       margin-bottom: 35px;
       background-image:url(../img/bg-white.png);
       overflow: hidden;
       box-sizing: border-box;
 
+      @media (min-width: $med) {
+        padding: 20px 40px;
+      }
+
       &-img {
         width: 360px;
+        max-width: 100%;
         height: auto;
       }
 
-      &:nth-of-type(odd) .seed-img {
-        float: left;
-        margin-right: 30px;
+      .seed-img {
+        display: block;
+        margin: 0 auto;
       }
 
-      &:nth-of-type(even) .seed-img {
-        float: right;
-        margin-left: 30px;
+      @media (min-width: $med) {
+        &:nth-of-type(odd) .seed-img {
+          float: left;
+          margin-right: 30px;
+        }
+
+        &:nth-of-type(even) .seed-img {
+          float: right;
+          margin-left: 30px;
+        }
       }
 
       h1 {
@@ -334,7 +385,11 @@ section {
           font-size: 1em;
           width: 33.33%;
           display: table-cell;
-          padding: 20px;
+          padding: 5px;
+
+          @media (min-width: $med) {
+            padding: 20px;
+          }
 
           &:not(:last-of-type) {
             border-right: 2px solid $green-light;
@@ -362,16 +417,35 @@ section {
   padding-bottom: 100px;
   text-align: center;
   background-image: url(../img/grass.png);
-  background-size: contain;
+  background-size: 768px 28px;
   background-repeat: no-repeat;
   background-position: bottom center;
 
-  h1:nth-of-type(2) {
-    margin: 70px 0 0;
+  @media (min-width: $med) {
+    background-size: contain;
+  }
+
+  h1 {
+    font-size: 2.2em;
   }
 
   h2 {
-    line-height: .5em;
+    margin: 5px;
+  }
+
+  .wtxl-phone {
+    position: relative;
+    top: 30px;
+  }
+
+  #truck {
+    margin-bottom: 40px;
+
+    img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   .phone {
@@ -388,20 +462,51 @@ section {
 
     div {
       display: inline-block;
-
-      &.numbers {
-        position: relative;
-        top: -15px;
-        margin-left: 10px;
-      }
     }
 
     img {
+      position: relative;
+      top: 15px;
       width: 100px;
       height: auto;
     }
   }
 }
+
+.fade-in {
+  opacity: 0;
+  -webkit-animation: fadeIn 1s normal forwards ease-in 1;
+  -moz-animation: fadeIn 1s normal forwards ease-in 1;
+  animation: fadeIn 1s normal forwards ease-in 1;
+}
+
+.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.two {
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+.three {
+  -webkit-animation-delay: 1.7s;
+  -moz-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+}
+
+.fade-out {
+  opacity: 1;
+  -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
+  -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
+  -moz-animation: fadeIn 1s reverse forwards ease-out 1;
+  animation: fadeIn 1s reverse forwards ease-out 1;
+}
+
+@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 @media (min-width: $med) {
   .nowrap {
