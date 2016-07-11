@@ -86,6 +86,7 @@ nav {
   background-image:url(../img/bg-green.jpg);
   padding: 10px;
   border-bottom: 1px solid $green;
+  z-index: 2;
 
   a {
     text-decoration: none;
@@ -291,6 +292,22 @@ section {
     color: $off-white;
     background-image: url(../img/bg-blck.png);
 
+    &-1 {
+      -webkit-animation-delay: 0.7s;
+      -moz-animation-delay: 0.7s;
+      animation-delay: 0.7s;
+    }
+    &-2 {
+      -webkit-animation-delay: 1.2s;
+      -moz-animation-delay: 1.2s;
+      animation-delay: 1.2s;
+    }
+    &-3 {
+      -webkit-animation-delay: 1.7s;
+      -moz-animation-delay: 1.7s;
+      animation-delay: 1.7s;
+    }
+
     @media (min-width: $med) {
       width: 33.33%;
       display: table-cell;
@@ -478,22 +495,6 @@ section {
   -webkit-animation: fadeIn 1s normal forwards ease-in 1;
   -moz-animation: fadeIn 1s normal forwards ease-in 1;
   animation: fadeIn 1s normal forwards ease-in 1;
-}
-
-.one {
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s;
-}
-.two {
-  -webkit-animation-delay: 1.2s;
-  -moz-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-.three {
-  -webkit-animation-delay: 1.7s;
-  -moz-animation-delay: 1.7s;
-  animation-delay: 1.7s;
 }
 
 .fade-out {

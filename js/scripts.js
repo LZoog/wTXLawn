@@ -37,24 +37,30 @@ $(function(){
 
     // benefits animation
     if ((topBenefits >= $(window).scrollTop() && $(window).scrollTop() >= bottomBenefits) && !$('.benefit').hasClass('fade-in')) {
-      console.log('inside');
       $('.benefit').each(function(i) {
-        if (i === 0) {
-          $(this).addClass('fade-in one');
-        } else if (i === 1) {
-          $(this).addClass('fade-in two');
-        } else {
-          $(this).addClass('fade-in three');
-        }
+        $(this).addClass('fade-in benefit-' + parseInt(i+1));
       });
     }
+    //
+    //
+    //
+    //     if (i === 0) {
+    //       $(this).addClass('fade-in one');
+    //     } else if (i === 1) {
+    //       $(this).addClass('fade-in two');
+    //     } else {
+    //       $(this).addClass('fade-in three');
+    //     }
+    //   });
+    // }
 
-    // sticky nav
+    // active nav
     if ($(window).scrollTop() >= top) {
       $('nav').find('a').removeClass('active');
       $('nav').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
     }
   }
+
 
   $(window).scroll(function(){
     sticky();

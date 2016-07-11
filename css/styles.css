@@ -53,7 +53,8 @@ nav {
   width: 100%;
   background-image: url(../img/bg-green.jpg);
   padding: 10px;
-  border-bottom: 1px solid #3b6720; }
+  border-bottom: 1px solid #3b6720;
+  z-index: 2; }
   nav a {
     text-decoration: none; }
   nav img {
@@ -200,6 +201,18 @@ section {
     padding: 10px;
     color: #e0e0e0;
     background-image: url(../img/bg-blck.png); }
+    #why .benefit-1 {
+      -webkit-animation-delay: 0.7s;
+      -moz-animation-delay: 0.7s;
+      animation-delay: 0.7s; }
+    #why .benefit-2 {
+      -webkit-animation-delay: 1.2s;
+      -moz-animation-delay: 1.2s;
+      animation-delay: 1.2s; }
+    #why .benefit-3 {
+      -webkit-animation-delay: 1.7s;
+      -moz-animation-delay: 1.7s;
+      animation-delay: 1.7s; }
     @media (min-width: 768px) {
       #why .benefit {
         width: 33.33%;
@@ -326,21 +339,6 @@ section {
   -webkit-animation: fadeIn 1s normal forwards ease-in 1;
   -moz-animation: fadeIn 1s normal forwards ease-in 1;
   animation: fadeIn 1s normal forwards ease-in 1; }
-
-.one {
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s; }
-
-.two {
-  -webkit-animation-delay: 1.2s;
-  -moz-animation-delay: 1.2s;
-  animation-delay: 1.2s; }
-
-.three {
-  -webkit-animation-delay: 1.7s;
-  -moz-animation-delay: 1.7s;
-  animation-delay: 1.7s; }
 
 .fade-out {
   opacity: 1;
