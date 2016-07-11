@@ -193,7 +193,7 @@ section {
     display: table;
     table-layout: fixed;
     border-spacing: 35px; }
-  #why .benefit {
+  #why div[class^="benefit"] {
     text-align: center;
     width: 100%;
     margin-bottom: 35px;
@@ -201,32 +201,32 @@ section {
     padding: 10px;
     color: #e0e0e0;
     background-image: url(../img/bg-blck.png); }
-    #why .benefit-1 {
-      -webkit-animation-delay: 0.7s;
-      -moz-animation-delay: 0.7s;
-      animation-delay: 0.7s; }
-    #why .benefit-2 {
-      -webkit-animation-delay: 1.2s;
-      -moz-animation-delay: 1.2s;
-      animation-delay: 1.2s; }
-    #why .benefit-3 {
-      -webkit-animation-delay: 1.7s;
-      -moz-animation-delay: 1.7s;
-      animation-delay: 1.7s; }
     @media (min-width: 768px) {
-      #why .benefit {
+      #why div[class^="benefit"] {
         width: 33.33%;
         display: table-cell;
         margin-bottom: 0;
         padding: 0px 25px 15px; } }
-    #why .benefit hr {
+    #why div[class^="benefit"].a1 {
+      -webkit-animation-delay: 0.7s;
+      -moz-animation-delay: 0.7s;
+      animation-delay: 0.7s; }
+    #why div[class^="benefit"].a2 {
+      -webkit-animation-delay: 1.2s;
+      -moz-animation-delay: 1.2s;
+      animation-delay: 1.2s; }
+    #why div[class^="benefit"].a3 {
+      -webkit-animation-delay: 1.7s;
+      -moz-animation-delay: 1.7s;
+      animation-delay: 1.7s; }
+    #why div[class^="benefit"] hr {
       width: 80px;
       border-width: 2px;
       border-color: #3b6720;
       margin-top: -5px; }
-  #why p {
-    font-size: 1.1em;
-    line-height: 1.25em; }
+    #why div[class^="benefit"] p {
+      font-size: 1.1em;
+      line-height: 1.25em; }
 
 #grasses {
   background-image: url(../img/bg-ltgreen.jpg); }

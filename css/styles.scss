@@ -283,7 +283,7 @@ section {
     border-spacing: 35px;
   }
 
-  .benefit {
+  div[class^="benefit"] {
     text-align: center;
     width: 100%;
     margin-bottom: 35px;
@@ -292,27 +292,29 @@ section {
     color: $off-white;
     background-image: url(../img/bg-blck.png);
 
-    &-1 {
-      -webkit-animation-delay: 0.7s;
-      -moz-animation-delay: 0.7s;
-      animation-delay: 0.7s;
-    }
-    &-2 {
-      -webkit-animation-delay: 1.2s;
-      -moz-animation-delay: 1.2s;
-      animation-delay: 1.2s;
-    }
-    &-3 {
-      -webkit-animation-delay: 1.7s;
-      -moz-animation-delay: 1.7s;
-      animation-delay: 1.7s;
-    }
-
     @media (min-width: $med) {
       width: 33.33%;
       display: table-cell;
       margin-bottom: 0;
       padding: 0px 25px 15px;
+    }
+
+    &.a1 {
+      -webkit-animation-delay: 0.7s;
+      -moz-animation-delay: 0.7s;
+      animation-delay: 0.7s;
+    }
+
+    &.a2 {
+      -webkit-animation-delay: 1.2s;
+      -moz-animation-delay: 1.2s;
+      animation-delay: 1.2s;
+    }
+
+    &.a3 {
+      -webkit-animation-delay: 1.7s;
+      -moz-animation-delay: 1.7s;
+      animation-delay: 1.7s;
     }
 
     hr {
@@ -321,11 +323,11 @@ section {
       border-color: $green;
       margin-top: -5px;
     }
-  }
 
-  p {
-    font-size: 1.1em;
-    line-height: 1.25em;
+    p {
+      font-size: 1.1em;
+      line-height: 1.25em;
+    }
   }
 }
 
