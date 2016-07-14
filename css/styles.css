@@ -4,28 +4,37 @@ html, body, #wrapper {
   margin: 0;
   padding: 0; }
 
+* {
+  border: 1px solid turquoise; }
+
 h1 {
   font-family: 'Philosopher', serif;
   color: #1a2906; }
 
 h2, p, li {
-  font-family: 'Open Sans', serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 header {
   text-align: center;
+  padding: 70px 0 15px;
   background-image: url(../img/bg-green.jpg);
-  padding: 25px 0 30px;
   border-bottom: 1px solid #3b6720; }
+  @media (min-width: 415px) {
+    header {
+      padding: 25px 0 30px; } }
   header img {
     width: 90px;
     height: auto; }
   header h1 {
     color: #e0e0e0;
     text-transform: uppercase;
-    letter-spacing: 2px;
     text-shadow: 1px 1px 1px black;
     margin: 8px 0 0;
-    font-size: 2.2em; }
+    font-size: 1.8em; }
+    @media (min-width: 415px) {
+      header h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px; } }
   header h2 {
     color: #cee3bc;
     font-size: 1.1em;
@@ -52,9 +61,12 @@ nav {
   box-sizing: border-box;
   width: 100%;
   background-image: url(../img/bg-green.jpg);
-  padding: 10px;
+  padding: 7px 0;
   border-bottom: 1px solid #3b6720;
   z-index: 2; }
+  @media (min-width: 415px) {
+    nav {
+      padding: 10px; } }
   nav a {
     text-decoration: none; }
   nav img {
@@ -83,7 +95,10 @@ nav {
           margin: 0 15px; } }
       nav ul li a {
         color: #cee3bc;
-        padding: 6px 10px; }
+        padding: 4px; }
+        @media (min-width: 768px) {
+          nav ul li a {
+            padding: 6px 10px; } }
         nav ul li a:hover:not(.active) {
           color: #8cbd62; }
         nav ul li a.active {
@@ -105,7 +120,10 @@ nav {
           .sticky #logo h1:hover {
             color: #a7cc86; } }
     .sticky #logo img {
-      display: inline-block; }
+      display: none; }
+      @media (min-width: 768px) {
+        .sticky #logo img {
+          display: inline-block; } }
 
 section {
   padding: 50px 10px; }
@@ -146,7 +164,10 @@ section {
     max-width: 800px;
     margin: 0 auto; }
   #about h1 {
-    font-size: 3.2em; }
+    font-size: 2.5em; }
+    @media (min-width: 768px) {
+      #about h1 {
+        font-size: 3.2em; } }
   #about hr {
     width: 80px;
     border-width: 3px;
@@ -157,17 +178,22 @@ section {
     line-height: 1.6em;
     margin: 0 auto; }
   #about a {
-    font-size: 1.1em;
+    font-size: .9em;
     letter-spacing: 1px;
     text-decoration: none;
     background-color: #3b6720;
-    border: 5px solid #cee3bc;
-    padding: 10px 20px;
+    border: 2px solid #cee3bc;
+    padding: 7px 12px;
     border-radius: 10px;
     color: #e0e0e0;
     text-transform: uppercase; }
     #about a:hover {
       background-color: #2b4c18; }
+    @media (min-width: 768px) {
+      #about a {
+        font-size: 1.1em;
+        padding: 10px 20px;
+        border-width: 5px; } }
 
 #why {
   background-image: url(../img/why.jpeg);
@@ -182,17 +208,23 @@ section {
   #why h2 {
     text-transform: uppercase;
     font-size: 2em;
-    margin: 0;
+    margin: 0 0 15px;
     text-align: center;
     letter-spacing: 2px;
     text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 3px #cee3bc, 1px 1px 3px #cee3bc; }
+    @media (min-width: 415px) {
+      #why h2 {
+        margin: 0; } }
   #why #benefit-wrapper {
     margin: 0 auto;
     max-width: 1300px;
     width: 95%;
     display: table;
     table-layout: fixed;
-    border-spacing: 35px; }
+    border-spacing: 3px; }
+    @media (min-width: 415px) {
+      #why #benefit-wrapper {
+        border-spacing: 35px; } }
   #why div[class^="benefit"] {
     text-align: center;
     width: 100%;
@@ -278,9 +310,11 @@ section {
         #grasses #seed-wrapper .seed ul li {
           text-align: center;
           font-size: 1em;
-          width: 33.33%;
-          display: table-cell;
           padding: 5px; }
+          @media (min-width: 415px) {
+            #grasses #seed-wrapper .seed ul li {
+              display: table-cell;
+              width: 33.33%; } }
           @media (min-width: 768px) {
             #grasses #seed-wrapper .seed ul li {
               padding: 20px; } }
@@ -289,7 +323,17 @@ section {
           #grasses #seed-wrapper .seed ul li img {
             width: 70px;
             height: auto;
-            padding: 5px; }
+            padding: 5px 10px 5px 5px;
+            position: relative;
+            top: 10px;
+            float: left; }
+            #grasses #seed-wrapper .seed ul li img.right {
+              float: right; }
+            @media (min-width: 415px) {
+              #grasses #seed-wrapper .seed ul li img {
+                top: 0;
+                float: none;
+                padding: 5px; } }
   #grasses hr {
     width: 80%;
     border-color: #e0f2cf;
@@ -297,7 +341,7 @@ section {
     margin: 0px auto 20px; }
 
 #contact {
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   text-align: center;
   background-image: url(../img/grass.png);
   background-size: 768px 28px;
@@ -305,11 +349,16 @@ section {
   background-position: bottom center; }
   @media (min-width: 768px) {
     #contact {
-      background-size: contain; } }
+      background-size: contain;
+      padding-bottom: 100px; } }
   #contact h1 {
     font-size: 2.2em; }
   #contact h2 {
-    margin: 5px; }
+    margin: 5px;
+    font-size: 1.1em; }
+    @media (min-width: 768px) {
+      #contact h2 {
+        font-size: 1.6em; } }
   #contact .wtxl-phone {
     position: relative;
     top: 30px; }
@@ -337,22 +386,14 @@ section {
 .fade-in {
   opacity: 0;
   -webkit-animation: fadeIn 1s normal forwards ease-in 1;
-  -moz-animation: fadeIn 1s normal forwards ease-in 1;
   animation: fadeIn 1s normal forwards ease-in 1; }
 
 .fade-out {
   opacity: 1;
   -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
-  -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
-  -moz-animation: fadeIn 1s reverse forwards ease-out 1;
   animation: fadeIn 1s reverse forwards ease-out 1; }
 
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-@-moz-keyframes fadeIn {
   from {
     opacity: 0; }
   to {

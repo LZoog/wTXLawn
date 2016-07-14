@@ -1,4 +1,5 @@
 
+$sm: 415px;
 $med: 768px;
 
 $off-white: #e0e0e0;
@@ -16,20 +17,27 @@ html, body, #wrapper {
   padding: 0;
 }
 
+* {
+  border: 1px solid turquoise;
+}
 h1 {
   font-family: 'Philosopher', serif;
   color: $green-dark;
 }
 
 h2, p, li {
-  font-family: 'Open Sans', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
   text-align: center;
+  padding: 70px 0 15px;
   background-image:url(../img/bg-green.jpg);
-  padding: 25px 0 30px;
   border-bottom: 1px solid $green;
+
+  @media (min-width: $sm) {
+    padding: 25px 0 30px;
+  }
 
   img {
     width: 90px;
@@ -39,10 +47,14 @@ header {
   h1 {
     color: $off-white;
     text-transform: uppercase;
-    letter-spacing: 2px;
     text-shadow: 1px 1px 1px black;
     margin: 8px 0 0;
-    font-size: 2.2em;
+    font-size: 1.8em;
+
+    @media (min-width: $sm) {
+      font-size: 2.2em;
+      letter-spacing: 2px;
+    }
   }
 
   h2 {
@@ -84,9 +96,13 @@ nav {
   box-sizing: border-box;
   width: 100%;
   background-image:url(../img/bg-green.jpg);
-  padding: 10px;
+  padding: 7px 0;
   border-bottom: 1px solid $green;
   z-index: 2;
+
+  @media (min-width: $sm) {
+    padding: 10px;
+  }
 
   a {
     text-decoration: none;
@@ -125,7 +141,11 @@ nav {
 
       a {
         color: $green-light;
-        padding: 6px 10px;
+        padding: 4px;
+
+        @media (min-width: $med) {
+          padding: 6px 10px;
+        }
 
         &:hover:not(.active) {
           color: darken($green-light, 25%);
@@ -162,7 +182,11 @@ nav {
     }
 
     img {
-      display: inline-block;
+      display: none;
+
+      @media (min-width: $med) {
+        display: inline-block;
+      }
     }
   }
 }
@@ -219,7 +243,11 @@ section {
   }
 
   h1 {
-    font-size: 3.2em;
+    font-size: 2.5em;
+
+    @media (min-width: $med) {
+      font-size: 3.2em;
+    }
   }
 
   hr {
@@ -236,18 +264,24 @@ section {
   }
 
   a {
-    font-size: 1.1em;
+    font-size: .9em;
     letter-spacing: 1px;
     text-decoration: none;
     background-color: $green;
-    border: 5px solid $green-light;
-    padding: 10px 20px;
+    border: 2px solid $green-light;
+    padding: 7px 12px;
     border-radius: 10px;
     color: $off-white;
     text-transform: uppercase;
 
     &:hover {
       background-color:darken($green, 7%);
+    }
+
+    @media (min-width: $med) {
+      font-size: 1.1em;
+      padding: 10px 20px;
+      border-width: 5px;
     }
   }
 }
@@ -268,10 +302,14 @@ section {
   h2 {
     text-transform: uppercase;
     font-size: 2em;
-    margin: 0;
+    margin: 0 0 15px;
     text-align: center;
     letter-spacing: 2px;
     text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 3px $green-light, 1px 1px 3px $green-light;
+
+    @media (min-width: $sm) {
+      margin: 0;
+    }
   }
 
   #benefit-wrapper {
@@ -280,7 +318,11 @@ section {
     width: 95%;
     display: table;
     table-layout: fixed;
-    border-spacing: 35px;
+    border-spacing: 3px;
+
+    @media (min-width: $sm) {
+      border-spacing: 35px;
+    }
   }
 
   div[class^="benefit"] {
@@ -402,9 +444,12 @@ section {
         li {
           text-align: center;
           font-size: 1em;
-          width: 33.33%;
-          display: table-cell;
           padding: 5px;
+
+          @media (min-width: $sm) {
+            display: table-cell;
+            width: 33.33%;
+          }
 
           @media (min-width: $med) {
             padding: 20px;
@@ -417,7 +462,20 @@ section {
           img {
             width: 70px;
             height: auto;
-            padding: 5px;
+            padding: 5px 10px 5px 5px;
+            position: relative;
+            top: 10px;
+            float: left;
+
+            &.right {
+              float: right;
+            }
+
+            @media (min-width: $sm) {
+              top: 0;
+              float: none;
+              padding: 5px;
+            }
           }
         }
       }
@@ -433,7 +491,7 @@ section {
 }
 
 #contact {
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   text-align: center;
   background-image: url(../img/grass.png);
   background-size: 768px 28px;
@@ -442,6 +500,7 @@ section {
 
   @media (min-width: $med) {
     background-size: contain;
+    padding-bottom: 100px;
   }
 
   h1 {
@@ -450,6 +509,11 @@ section {
 
   h2 {
     margin: 5px;
+    font-size: 1.1em;
+
+    @media (min-width: $med) {
+      font-size: 1.6em;
+    }
   }
 
   .wtxl-phone {
@@ -495,20 +559,16 @@ section {
 .fade-in {
   opacity: 0;
   -webkit-animation: fadeIn 1s normal forwards ease-in 1;
-  -moz-animation: fadeIn 1s normal forwards ease-in 1;
   animation: fadeIn 1s normal forwards ease-in 1;
 }
 
 .fade-out {
   opacity: 1;
   -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
-  -webkit-animation: fadeIn 1s reverse forwards ease-out 1;
-  -moz-animation: fadeIn 1s reverse forwards ease-out 1;
   animation: fadeIn 1s reverse forwards ease-out 1;
 }
 
 @-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 @media (min-width: $med) {

@@ -28,8 +28,6 @@ $(function(){
       $('#fence').css('margin-top', '0px');
     }
 
-    // check for active nav
-
     // get top of sections for navbar & animations, set active on navbar
     var top;
     anchors.each(function(){
@@ -40,6 +38,7 @@ $(function(){
         top = $(this).offset().top;
       }
 
+      // check for active nav
       if ($(window).scrollTop() >= top) {
         $('nav').find('a').removeClass('active');
         $('nav').find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
