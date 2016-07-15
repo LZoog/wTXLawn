@@ -4,9 +4,6 @@ html, body, #wrapper {
   margin: 0;
   padding: 0; }
 
-* {
-  border: 1px solid turquoise; }
-
 h1 {
   font-family: 'Philosopher', serif;
   color: #1a2906; }
@@ -285,10 +282,12 @@ section {
       #grasses #seed-wrapper .seed-img {
         width: 360px;
         max-width: 100%;
-        height: auto; }
-      #grasses #seed-wrapper .seed .seed-img {
+        height: auto;
         display: block;
-        margin: 0 auto; }
+        margin: 0 auto 10px; }
+        @media (min-width: 768px) {
+          #grasses #seed-wrapper .seed-img {
+            margin: 0 auto; } }
       @media (min-width: 768px) {
         #grasses #seed-wrapper .seed:nth-of-type(odd) .seed-img {
           float: left;
@@ -299,8 +298,16 @@ section {
       #grasses #seed-wrapper .seed h1 {
         font-size: 2.2em;
         text-align: center; }
+      #grasses #seed-wrapper .seed h3 {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: -15px; }
       #grasses #seed-wrapper .seed p {
-        font-size: 1.2em; }
+        font-size: 1em; }
+        @media (min-width: 415px) {
+          #grasses #seed-wrapper .seed p {
+            font-size: 1.2em; } }
       #grasses #seed-wrapper .seed ul {
         list-style-type: none;
         display: table;
@@ -308,27 +315,33 @@ section {
         margin-top: 40px;
         padding: 0; }
         #grasses #seed-wrapper .seed ul li {
-          text-align: center;
+          text-align: justify;
           font-size: 1em;
           padding: 5px; }
           @media (min-width: 415px) {
             #grasses #seed-wrapper .seed ul li {
               display: table-cell;
-              width: 33.33%; } }
+              width: 33.33%;
+              text-align: center; } }
           @media (min-width: 768px) {
             #grasses #seed-wrapper .seed ul li {
-              padding: 20px; } }
-          #grasses #seed-wrapper .seed ul li:not(:last-of-type) {
-            border-right: 2px solid #cee3bc; }
+              padding: 20px;
+              min-width: 150px; } }
+          @media (min-width: 415px) {
+            #grasses #seed-wrapper .seed ul li:not(:last-of-type) {
+              border-right: 2px solid #3b6720; } }
           #grasses #seed-wrapper .seed ul li img {
             width: 70px;
             height: auto;
-            padding: 5px 10px 5px 5px;
+            padding: 5px 30px 10px;
             position: relative;
             top: 10px;
             float: left; }
             #grasses #seed-wrapper .seed ul li img.right {
               float: right; }
+              @media (min-width: 415px) {
+                #grasses #seed-wrapper .seed ul li img.right {
+                  float: none; } }
             @media (min-width: 415px) {
               #grasses #seed-wrapper .seed ul li img {
                 top: 0;
@@ -339,6 +352,12 @@ section {
     border-color: #e0f2cf;
     border-width: 1px;
     margin: 0px auto 20px; }
+
+.arrows {
+  display: none; }
+  @media (min-width: 768px) {
+    .arrows {
+      display: inline; } }
 
 #contact {
   padding-bottom: 60px;
